@@ -12,7 +12,7 @@ int main() {
     printf("Difference: %lf\n", first - second);
     printf("Product: %lf\n", first * second);
     
-    if (a != 0) {
+    if (first != 0) {
         printf("Quotient: %lf\n", first / second);
     } else { 
         printf("Cannot divide by 0.\n");
