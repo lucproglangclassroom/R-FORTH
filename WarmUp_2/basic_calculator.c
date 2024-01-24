@@ -1,21 +1,21 @@
 #include <stdio.h> 
 
 int main() { 
-    double a, b; 
+    double first, second; 
 
     printf("Enter first number: ");
-    scanf("%lf", &a);
+    scanf("%lf", &first);
     printf("Enter second number: ");
-    scanf("%lf", &b);
+    scanf("%lf", &second);
 
-    printf("Sum: %lf\n"+ (a + b));
-    printf("Difference: %lf\n" + (a - b));
-    printf("Product: %lf\n" + (a * b));
+    printf("Sum: %lf\n", first + second);
+    printf("Difference: %lf\n", first - second);
+    printf("Product: %lf\n", first * second);
     
     if (a != 0) {
-        printf("Quotient: %lf\n" + (a / b));
+        printf("Quotient: %lf\n", first / second);
     } else { 
-        printf("Cannot divide by 0.\n")
+        printf("Cannot divide by 0.\n");
     }
 
     return 0;
