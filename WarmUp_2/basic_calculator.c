@@ -17,4 +17,6 @@ int main() {
     } else { 
         printf("Cannot divide by 0.\n")
     }
+
+    return 0;
 }

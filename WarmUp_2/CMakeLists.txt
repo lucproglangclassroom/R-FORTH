@@ -1,3 +1,3 @@
 add_executable( 
-    calc
-    calc.c )
+    basic_calculator
+    basic_calculator.c )
