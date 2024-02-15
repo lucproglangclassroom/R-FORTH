@@ -1,20 +1,16 @@
-# include "token.h"
-# include <string.h>
+// main.c
+#include "token.h"
 
-int main() {
-    printf("Enter R_Forth tokens (enter 'QUIT' to stop):\n");
+int main(void) {
     while (1) {
-        printf("> "); // prompt for input 
-        fflush(stdout); // ensure the prompt is displayed 
-
-        token_t token = get_next_token(stdin);
-        if (token.type == END_OF_INPUT || token.type == WORD && strcmp(token.txt, "QUIT") == 0) {
-            free_token(&token); // clean up before exiting
-            break; // exit loop if the input is QUIT 
+        token_t token = get_next_token();
+        if (token.type == END_OF_INPUT) {
+            free_token(&token);
+            break; // Exit if no more input
         }
 
         print_token(token);
-        free_token(&token); // clean up token text memory
+        free_token(&token);
     }
     return 0;
 }
