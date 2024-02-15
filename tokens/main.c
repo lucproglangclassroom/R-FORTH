@@ -1,25 +1,20 @@
 # include "token.h"
-# include <stdio.h>
-# include <stdlib.h>
 # include <string.h>
 
-# define MAX_INPUT_LENGTH 256
-
 int main() {
-    char input[MAX_INPUT_LENGTH];
-    printf("Enter a line of R-FORTH code: ");
-    if (fgets(input, MAX_INPUT_LENGTH, stdin) != NULL) {
-        input[strcspn(input, "\n")] = 0;
+    printf("Enter R_Forth tokens (enter 'QUIT' to stop):\n");
+    while (1) {
+        printf("> "); // prompt for input 
+        fflush(stdout); // ensure the prompt is displayed 
 
-        char* tokenText = strtok(input, " ");
-        while (tokenText != NULL) {
-            token_t* token = create_token(TOKEN_H, tokenText);
-            if (token) {
-                printf("Token Type: %d, Text: %s\n", myToken->type, myToken->text);
-                free_token(myToken);
-            }
-            tokenText = strtok(NULL, " ");        
+        token_t token = get_next_token(stdin);
+        if (token.type == END_OF_INPUT || token.type == WORD && strcmp(token.txt, "QUIT") == 0) {
+            free_token(&token); // clean up before exiting
+            break; // exit loop if the input is QUIT 
         }
+
+        print_token(token);
+        free_token(&token); // clean up token text memory
     }
     return 0;
 }
