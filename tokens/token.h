@@ -16,8 +16,8 @@ typedef struct {
     char* text; 
 } token_t;
 
-token_t get_next_token(FILE* stream);
-void print_token(const token_t token);
-void free_token(token_t* token)
+token_t get_next_token(void);
+void print_token(token_t token);
+void free_token(token_t* token);
 
 #endif
