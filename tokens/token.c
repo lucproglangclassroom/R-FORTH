@@ -5,7 +5,7 @@
 #include <string.h>
 #include <ctype.h>
 
-// Helper function to check if a string is a number
+// Check if a string is a number
 static int is_number(const char* str) {
     if (*str == '-' || *str == '+') str++; // Allow leading + or -
     while (*str) {
