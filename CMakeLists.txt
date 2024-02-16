@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(OperatingSystemsStarter)
+project(R-FORTH)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
@@ -20,6 +20,10 @@ set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 include_directories(${GTEST_INCLUDE_DIRS})
 
+add_library(token token.c)
+add_executable(rforth main.c)
+target_link_libraries(rforth token)
+
 add_subdirectory(hello)
 add_subdirectory(hello-lib)
 add_subdirectory(lwlog-lib)
@@ -35,11 +39,6 @@ add_subdirectory(WarmUp_7)
 add_subdirectory(WarmUp_8)
 add_subdirectory(WarmUp_9)
 add_subdirectory(WarmUp_10)
-add_subdirectory(tokens)
-
 
 # You can use add_subdirectory() to add your own work. 
 # Please don't remove the existing subdirectories.
-
-
-
