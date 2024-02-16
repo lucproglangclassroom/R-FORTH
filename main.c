@@ -1,4 +1,3 @@
-// main.c
 #include "token.h"
 #include <stdio.h>
 #include <string.h>
